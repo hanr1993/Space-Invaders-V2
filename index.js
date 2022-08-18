@@ -52,6 +52,7 @@ const drawAliens = () => {
 };
 
 const controlShip = (event) => {
+  console.log(event);
   if (state.gameOver) return;
   if (event.code === "ArrowLeft") {
     moveShip("left");
@@ -136,7 +137,7 @@ const play = () => {
     checkGameState(interval);
   }, 400);
 
-  window.addEventListener("keydown", controlShip);
+  window.addEventListener("touchmove", controlShip);
 };
 
 const atEdge = (side) => {
